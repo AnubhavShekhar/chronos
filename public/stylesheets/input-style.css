@@ -12,6 +12,7 @@
     width: 1800px;
     background-color: #3D424A;
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    border-radius: 25px;
     padding-top:100px;
 
 }
