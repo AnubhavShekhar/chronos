@@ -35,7 +35,7 @@
     position:relative;
     vertical-align: auto;
     top:10;
-    z-index: 100;
+    
 }
 
 .type ul{
@@ -149,12 +149,14 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    padding-left: 70px;
     background: rgb(255, 255, 255);
 }
 
 table{
     display: block;
     position: relative;
+    width:95%;
     border: 0.1px solid #151314;
     border-radius: 9px;
     z-index: 0;
@@ -187,7 +189,7 @@ td{
 }
 
 .buttons{
-    padding-top: 600px;
+    padding-top: 500px;
     width:100%;
     display: flex;
     justify-content: space-around;
@@ -323,6 +325,87 @@ td{
 }
 
 .expa-btn:hover::after{
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+
+@keyframes moveInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    80% {
+        transform: translateX(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(+100px);
+    }
+    80% {
+        transform: translateX(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.refresh-btn{
+    display: inline-block;
+    background: #FEAE49
+
+}
+
+.refresh-btn:link, .refresh-btn:visited{
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px 40px;
+    display: inline-block;
+    border-radius: 100px;
+    transition: all 0.2s;
+    position: relative;
+}
+
+.refresh-btn:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0, 0.2);
+}
+
+.refresh-btn:active{
+    transform: translateY(1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0, 0.2);
+}
+
+.refresh-btn-white {
+    background-color: white;
+    color: #777;
+}
+
+.refresh-btn::after{
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.4s;
+}
+
+.refresh-btn-white::after {
+    background-color: white;
+}
+
+.refresh-btn:hover::after{
     transform: scaleX(1.4) scaleY(1.6);
     opacity: 0;
 }

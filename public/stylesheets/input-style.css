@@ -16,7 +16,6 @@
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     border-radius: 25px;
     padding-top:100px;
-
 }
 
 .dropdowns{
@@ -129,9 +128,10 @@
     
 }
 .inputs{
-    padding-top: 100px;
+    padding-top: 50px;
     display: flex;
     justify-content: space-around;
+    z-index: -3;
 }
 
 .input-teachers{
@@ -153,7 +153,7 @@
   cursor: pointer;
   position : relative;
   max-width:  20em;
-  margin: 1.5em auto;
+  margin: 1em auto;
   width: 100%;
 }
 
@@ -211,7 +211,7 @@
 }
 
 .buttons{
-    padding-top: 50px;
+    padding-top: 10px;
     display: flex;
     justify-content: space-around;
 }
