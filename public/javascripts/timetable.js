@@ -60,4 +60,13 @@ addSlot(friday, 'fri', 6);
 const rfBtn = document.querySelector('#refresh');
 rfBtn.addEventListener('click', generateNew);
 
+const ddSem = ["S1","S2","S3","S4","S5","S6","S7","S8"];
+var ddSel;
+for( let i =0 ;i<8;i++)
+{
+    ddSel = document.querySelector(`#${ddSem[i]}`);
+    ddSel.addEventListener('click',generateNew);
+    console.log(ddSel);
+}
+console.log(ddSem);
 init();
