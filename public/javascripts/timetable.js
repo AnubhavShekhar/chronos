@@ -62,11 +62,25 @@ rfBtn.addEventListener('click', generateNew);
 
 const ddSem = ["S1","S2","S3","S4","S5","S6","S7","S8"];
 var ddSel;
-for( let i =0 ;i<8;i++)
-{
-    ddSel = document.querySelector(`#${ddSem[i]}`);
-    ddSel.addEventListener('click',generateNew);
+for (let i = 0; i < 8; i++) {
+    ddSel = document.getElementById(`${ddSem[i]}`);
     console.log(ddSel);
+    ddSel.addEventListener('click', () => {
+        console.log('clik');
+        generateNew();
+        document.getElementById('sem').textContent = `Semester ${i + 1}`;
+        console.log(ddSel.textContent);
+    });
+
 }
-console.log(ddSem);
+const ddDeptVal = ["CSE","ME","CE","ECE","EE"];
+const ddDept = ["D1","D2","D3","D4","D5"];
+
+for ( let i = 0 ; i < 5 ; i++)
+{
+    let deptSel = document.getElementById(`${ddDept[i]}`);
+    deptSel.addEventListener('click', () =>{
+        document.getElementById('dept').textContent = `${ddDeptVal[i]}`
+    })
+}
 init();
