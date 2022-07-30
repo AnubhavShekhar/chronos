@@ -211,7 +211,7 @@
 }
 
 .buttons{
-    padding-top: 10px;
+    padding-top: 100px;
     display: flex;
     justify-content: space-around;
 }

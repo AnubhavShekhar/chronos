@@ -41,35 +41,17 @@
     align-items: center;
 }
 
-.type,.semester,.department{
+.semester,.department{
     position:relative;
     vertical-align: auto;
-    margin-left: 250px;
-    margin-right: 250px;
+    margin-left: 150px;
+    margin-right: 150px;
+    margin-top: 200px;
     top:10;
     z-index: 100;
     
 }
 
-.type ul{
-    position: absolute;
-    background: #FFDDD2;
-    border-radius: 5px;
-    width: 200px;
-    height: 50px;
-    margin-top: 10px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    z-index: 100;
-    flex-direction: column;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-    list-style: none;
-    opacity: 0;
-    pointer-events: auto;
-    transform: translateY(10px);
-    transition: all 0.4s ease;
-}
 .semester ul{
     position: absolute;
     background: #FFDDD2;
@@ -110,7 +92,7 @@
     transition: all 0.4s ease;
 }
 
-.type li,.semester li,.department li{
+.semester li,.department li{
     white-space: nowrap;
     background-color: #FEAE49;
     width:100%;
@@ -123,7 +105,7 @@
     cursor: default;
 }
 
-.type li:hover,.semester li:hover,.department li:hover{
+.semester li:hover,.department li:hover{
     background-color: #cf8224;
 }
 
@@ -144,7 +126,6 @@
     color: #617596;
 }
 
-.type button:focus + ul,
 .semester button:focus +ul,
 .department button:focus +ul{
     opacity: 10;
@@ -177,7 +158,7 @@ table{
     z-index: 0;
     text-align: center;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-    background: linear-gradient(45deg,#a6ceea,#ec6bd9);
+    background: #f7d6d6;
     box-shadow: 9px 9px 18px #1f1f1f,
                 -9px, -9px, 18px #474747;
 }
@@ -451,4 +432,8 @@ td{
         opacity: 1;
         transform: translateX(0);
     }
+}
+
+.break1, .break2, .break3, .friday{
+    background: #fec89a;
 }
