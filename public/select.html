@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/select-style.css">
+</head>
+<body>
+    <section class="cards">
+        <article class="card card--1" id="c1" onclick="location.href = 'output.html'">
+          <div class="card__img"></div>
+          <a href="#" class="card_link">
+             <div class="card__img--hover"></div>
+           </a>
+          <div class="card__info">
+            <h3 class="card__title">View existing timetables.</h3>
+          </div>
+        </article>
+          
+          
+        <article class="card card--2" id="c2" onclick="location.href = 'input.html'">
+          <div class="card__img"></div>
+          <a href="#" class="card_link">
+             <div class="card__img--hover"></div>
+           </a>
+          <div class="card__info">
+            <h3 class="card__title">Generate new timetables.</h3>
+          </div>
+        </article>  
+        <script type="text/javascript">
+            document.getElementById("c1").onclick = function (){
+                location.href = "output.html";
+            };
+            document.getElementById("c2").onclick = function (){
+                location.href = "input.html";
+            };
+
+        </script>
+    </section>
+</body>
+</html>

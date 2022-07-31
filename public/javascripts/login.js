@@ -21,7 +21,7 @@ $(".login").submit(function () {
     $(".feedback-negative").hide();
     $(".feedback-positive").show().animate({ opacity: "1", bottom: "-80px" }, 400);
     $("input").css({ "border-color": "#2ecc71" });
-    setInterval(() => document.location.href = 'input.html', 1000);
+    setInterval(() => document.location.href = 'select.html', 1000);
   }
   return false;
 });
