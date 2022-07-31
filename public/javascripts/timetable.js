@@ -80,7 +80,7 @@ for ( let i = 0 ; i < 5 ; i++)
 {
     let deptSel = document.getElementById(`${ddDept[i]}`);
     deptSel.addEventListener('click', () =>{
-        document.getElementById('dept').textContent = `${ddDeptVal[i]}`
-    })
+        document.getElementById('dept').textContent = `${ddDeptVal[i]}`;
+    });
 }
 init();
