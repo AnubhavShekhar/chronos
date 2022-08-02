@@ -23,7 +23,7 @@
 
 .ds{
     position: absolute;
-    margin-bottom: 700px;
+    margin-bottom: 750px;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -46,6 +46,10 @@
     display:flex;
     justify-content: space-around;
     align-items: center;
+}
+
+.department{
+    pointer-events: none;
 }
 
 .semester,.department{
@@ -279,7 +283,7 @@ td{
     }
 }
 
-.expa-btn{
+/* .expa-btn{
     display: inline-block;
     background: #FEAE49
 
@@ -358,7 +362,7 @@ td{
         opacity: 1;
         transform: translateX(0);
     }
-}
+} */
 
 .refresh-btn{
     display: inline-block;

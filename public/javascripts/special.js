@@ -68,15 +68,10 @@ var ddSel;
 for (let i = 0; i < ddSem.length; i++) {
     ddSel = document.getElementById(`${ddSem[i]}`);
     console.log(ddSel);
-    if(ddSel.id == "S1" || ddSel.id == "S2"){
-        ddSel.onclick = function (){
-            location.href = 'special.html'
-        }
-    }
     ddSel.addEventListener('click', () => {
         document.getElementById('sem').textContent = `Semester ${i + 1}`;
 
-        init(i + 1);
+        init(2 * i + 2);
     });
 
 }

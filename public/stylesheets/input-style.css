@@ -30,6 +30,9 @@
     align-items: center;
 }
 
+.department{
+    pointer-events: none;
+}
 .type,.semester,.department{
     position: relative;
     margin-left:50px;
