@@ -13,7 +13,7 @@
         integrity="sha384-zIaWifL2YFF1qaDiAo0JFgsmasocJ/rqu7LKYH8CoBEXqGbb9eO+Xi3s6fQhgFWM" crossorigin="anonymous">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet" href="./stylesheets/out.css">
+    <link rel="stylesheet" href="./stylesheets/special.css">
 </head>
 
 <body>
@@ -31,13 +31,13 @@
                                 expand_more
                             </span></button>
                         <ul>
-                            <!-- <li id="S1">Semester 1</li> -->
+                            <li id="S1">Semester 1</li>
                             <li id="S2">Semester 2</li>
-                            <!-- <li id="S3">Semester 3</li> -->
+                            <li id="S3">Semester 3</li>
                             <li id="S4">Semester 4</li>
-                            <!-- <li id="S5">Semester 5</li> -->
+                            <li id="S5">Semester 5</li>
                             <li id="S6">Semester 6</li>
-                            <!-- <li id="S7">Semester 7</li> -->
+                            <li id="S7">Semester 7</li>
                             <li id="S8">Semester 8</li>
                         </ul>
                     </div>
@@ -72,16 +72,15 @@
                 <th rowspan="2">02:30pm-02:40pm</th>
                 <th>6<sup>th</sup> Hour</th>
                 <th>7<sup>th</sup> Hour</th>
-
             </tr>
 
             <tr>
                 <td>9:00am-10:00am</td>
                 <td>10:00am-11:00am</td>
                 <td>11:10am-12:10pm</td>
-                <td>12:10pm-01:00pm</td>
+                <td>12:50pm-01:40pm</td>
                 <td>01:40pm-02:30pm</td>
-                <td>02:30pm-03:20pm</td>
+                <td>02:40pm-03:30pm</td>
                 <td>03:30pm-04:20pm</td>
             </tr>
 
@@ -91,11 +90,11 @@
                 <td id="mon2"></td>
                 <th rowspan="6" class="break1">B<br>R<br>E<br>A<br>K</th>
                 <td id="mon3"></td>
-                <td id="mon4"></td>
                 <th rowspan="6" class="break2">L<br>U<br>N<br>C<br>H<br><br>B<br>R<br>E<br>A<br>K</th>
+                <td id="mon4"></td>
                 <td id="mon5"></td>
-                <td id="mon6"></td>
                 <th rowspan="6" class="break3">B<br>R<br>E<br>A<br>K</th>
+                <td id="mon6"></td>
                 <td id="mon7"></td>
             </tr>
             <tr>
@@ -128,19 +127,42 @@
                 <td id="thu6"></td>
                 <td id="thu7"></td>
             </tr>
-            <tr>
-                <td>FRI</td>
-                <td id="fri1"></td>
-                <td id="fri2"></td>
-                <td id="fri3"></td>
-                <td id="fri4"></td>
-                <th class="friday">BREAK</th>
-                <td id="fri5"></td>
-                <td id="fri6"></td>
-            </tr>
 
         </table>
     </section>
+    
+    <section class = "fritabletop">
+        <table class = "fritbcentre" style ="overflow-x: auto;">
+            <tr>
+                <th rowspan="2">DAY</th>
+                <th>1<sup>st</sup> Hour</th>
+                <th>2<sup>nd</sup> Hour</th>
+                <th rowspan="2">11:00am-11:10am</th>
+                <th>3<sup>rd</sup> Hour</th>
+                <th rowspan="2">12:10pm-01:40pm</th>
+                <th>4<sup>th</sup> Hour</th>
+                <th>5<sup>th</sup> Hour</th>
+            </tr>
+            <tr>
+                <td>9:00am-10:00am</td>
+                <td>10:00am-11:00am</td>
+                <td>11:10am-12:10pm</td>
+                <td>01:40pm-02:30pm</td>
+                <td>02:30pm-04:20pm</td>
+            </tr>
+
+            <tr>
+                <td>FRI</td>
+                <td id="mon1"></td>
+                <td id="mon2"></td>
+                <th rowspan="1" class="break1">BREAK</th>
+                <td id="mon3"></td>
+                <th rowspan="1" class="break2">LUNCH<br>BREAK</th>
+                <td id="mon4"></td>
+                <td id="mon5"></td>                
+        </table>
+    </section>
+
     <section class="buttons">
         <div class="export-btn">
             <a style="font-family:Montserrat;" href="#" class="exp-btn">export</a>

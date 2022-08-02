@@ -8,11 +8,13 @@ const OPTIONS =     {
     },
 };
 
+document.getElementById('sem').textContent = `Semester 6`;
+
 let timetable;
 let ttIndex = 0;
 
-function init() {
-    fetch(`http://localhost:8000/timetable/${ttIndex}`, OPTIONS)
+function init(id) {
+    fetch(`http://localhost:8000/timetables/${id}`, OPTIONS)
         .then(response => response.json())
         .then(data => later(allDays, data));
 }
@@ -24,7 +26,7 @@ function addSlot(day, str, n) {
     }
 }
 
-function later(days, {timetable}) {
+function later(days, timetable) {
     console.log({days, timetable});
     for (let i = 0; i < days.length; i++) {
         for (let j = 0; j < days[i].length; j++) {
@@ -60,16 +62,16 @@ addSlot(friday, 'fri', 6);
 const rfBtn = document.querySelector('#refresh');
 rfBtn.addEventListener('click', generateNew);
 
-const ddSem = ["S1","S2","S3","S4","S5","S6","S7","S8"];
+// const ddSem = ["S1","S2","S3","S4","S5","S6","S7","S8"];
+const ddSem = ["S2", "S4", "S6", "S8"];
 var ddSel;
-for (let i = 0; i < 8; i++) {
+for (let i = 0; i < ddSem.length; i++) {
     ddSel = document.getElementById(`${ddSem[i]}`);
     console.log(ddSel);
     ddSel.addEventListener('click', () => {
-        console.log('clik');
-        generateNew();
-        document.getElementById('sem').textContent = `Semester ${i + 1}`;
-        console.log(ddSel.textContent);
+        document.getElementById('sem').textContent = `Semester ${2 * i + 2}`;
+
+        init(2 * i + 2);
     });
 
 }
@@ -83,4 +85,4 @@ for ( let i = 0 ; i < 5 ; i++)
         document.getElementById('dept').textContent = `${ddDeptVal[i]}`;
     });
 }
-init();
+init(6);
