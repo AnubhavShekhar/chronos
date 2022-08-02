@@ -13,6 +13,18 @@ const OPTIONS =     {
 let timetable;
 let ttIndex = 0;
 
+const SEM_BTNS = ["S1", "S2", "S3", "S4", "S5", "S6", "S7", "S8"];
+const semType = window.localStorage.getItem('type');
+if (semType.endsWith('n')) {
+    for (let i = 0; i < SEM_BTNS.length; i += 2) {
+        document.getElementById(SEM_BTNS[i]).style.display = 'none';
+    }
+} else {
+    for (let i = 1; i < SEM_BTNS.length; i += 2) {
+        document.getElementById(SEM_BTNS[i]).style.display = 'none';
+    }
+}
+
 function init(id) {
     fetch(`http://localhost:8000/timetables/${id}`, OPTIONS)
         .then(response => response.json())

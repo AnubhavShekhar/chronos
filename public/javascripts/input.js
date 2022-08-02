@@ -6,6 +6,7 @@ for (let i = 0; i < 2 ;i++) {
   const typeSel = document.getElementById(`${ddType[i]}`);
   typeSel.addEventListener('click', () => {
     document.getElementById('type').textContent = `${ddTypeVal[i]}`;
+    window.localStorage.setItem('type', ddTypeVal[i].toLowerCase());
 
     // Display only semester based on odd/even selection
     if (typeSel.innerText.endsWith('n')) {
