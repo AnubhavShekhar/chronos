@@ -1,23 +1,38 @@
-const ddTypeVal = ["ODD","EVEN"];
+const ddTypeVal = ["Odd","Even"];
 const ddType = ["I1","I2"];
-for ( let i =0 ; i < 2 ; i++)
-{
-  let typeSel = document.getElementById(`${ddType[i]}`);
-  typeSel.addEventListener('click', () =>{
+const ddSem = ["S1","S2","S3","S4","S5","S6","S7","S8"];
+
+for (let i = 0; i < 2 ;i++) {
+  const typeSel = document.getElementById(`${ddType[i]}`);
+  typeSel.addEventListener('click', () => {
     document.getElementById('type').textContent = `${ddTypeVal[i]}`;
+
+    // Display only semester based on odd/even selection
+    if (typeSel.innerText.endsWith('n')) {
+        for (let j = 0; j < ddSem.length; j++) {
+            if (j % 2 == 1) {
+                document.getElementById(ddSem[j]).style.display = 'flex';
+            } else {
+                document.getElementById(ddSem[j]).style.display = 'none';
+            }
+        }
+    } else {
+        for (let j = 0; j < ddSem.length; j++) {
+            if (j % 2 == 0) {
+                document.getElementById(ddSem[j]).style.display = 'flex';
+            } else {
+                document.getElementById(ddSem[j]).style.display = 'none';
+            }
+        }
+    }
   });
 }
 
-const ddSem = ["S1","S2","S3","S4","S5","S6","S7","S8"];
-var ddSel;
-
-for (let i = 0; i < 8; i++) {
-    ddSel = document.getElementById(`${ddSem[i]}`);
-    console.log(ddSel);
+for (let i = 0; i < ddSem.length; i++) {
+    const ddSel = document.getElementById(`${ddSem[i]}`);
+    ddSel.style.display = 'none';
     ddSel.addEventListener('click', () => {
-        console.log('clik');
         document.getElementById('sem').textContent = `Semester ${i + 1}`;
-        console.log(ddSel.textContent);
     });
 }
 // const ddDeptVal = ["CSE","ME","CE","ECE","EE"];
