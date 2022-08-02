@@ -20,16 +20,16 @@ for (let i = 0; i < 8; i++) {
         console.log(ddSel.textContent);
     });
 }
-const ddDeptVal = ["CSE","ME","CE","ECE","EE"];
-const ddDept = ["D1","D2","D3","D4","D5"];
+// const ddDeptVal = ["CSE","ME","CE","ECE","EE"];
+// const ddDept = ["D1","D2","D3","D4","D5"];
 
-for ( let i = 0 ; i < 5 ; i++)
-{
-    let deptSel = document.getElementById(`${ddDept[i]}`);
-    deptSel.addEventListener('click', () =>{
-        document.getElementById('dept').textContent = `${ddDeptVal[i]}`;
-    });
-}
+// for ( let i = 0 ; i < 5 ; i++)
+// {
+//     let deptSel = document.getElementById(`${ddDept[i]}`);
+//     deptSel.addEventListener('click', () =>{
+//         document.getElementById('dept').textContent = `${ddDeptVal[i]}`;
+//     });
+// }
 
 $("select").on("click" , function() {
   
