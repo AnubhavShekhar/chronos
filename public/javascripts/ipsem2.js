@@ -46,7 +46,7 @@ for (let i = 0; i < ddSem.length; i++) {
     ddSel.addEventListener('click', () => {
         document.getElementById('sem').textContent = `Semester ${i + 1}`;
         if( ddSel.id == "S2"){
-                location.href = 'ipsem2.html';
+          location.href = 'ipsem2.html';
         }
         else if( ddSel.id == "S4"){
           location.href = 'ipsem4.html'
@@ -57,7 +57,6 @@ for (let i = 0; i < ddSem.length; i++) {
         else if( ddSel.id == "S8"){
           location.href = 'ipsem8.html'
         }
-
         fetchSem(i + 1);
     });
 }

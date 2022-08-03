@@ -43,6 +43,9 @@ function later(days, timetable) {
     console.log({days, timetable});
     for (let i = 0; i < days.length; i++) {
         for (let j = 0; j < days[i].length; j++) {
+            if (timetable[i][j].startsWith('NW')) {
+                timetable[i][j] = 'NW/MP';
+            }
             days[i][j].textContent = timetable[i][j];
         }
     }
