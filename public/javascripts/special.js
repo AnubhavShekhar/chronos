@@ -10,6 +10,19 @@ const OPTIONS =     {
 
 // document.getElementById('sem').textContent = `Semester 6`;
 
+const SEM_BTNS = ["S1", "S2", "S3", "S4", "S5", "S6", "S7", "S8"];
+const semType = window.localStorage.getItem('type');
+if (semType.endsWith('n')) {
+    for (let i = 0; i < SEM_BTNS.length; i += 2) {
+        document.getElementById(SEM_BTNS[i]).style.display = 'none';
+    }
+} else {
+    for (let i = 1; i < SEM_BTNS.length; i += 2) {
+        document.getElementById(SEM_BTNS[i]).style.display = 'none';
+    }
+}
+
+
 let timetable;
 let ttIndex = 0;
 
@@ -30,9 +43,6 @@ function later(days, timetable) {
     console.log({days, timetable});
     for (let i = 0; i < days.length; i++) {
         for (let j = 0; j < days[i].length; j++) {
-            if (timetable[i][j].startsWith('NW')) {
-                timetable[i][j] = 'NW/MP';
-            }
             days[i][j].textContent = timetable[i][j];
         }
     }
@@ -70,7 +80,7 @@ for (let i = 0; i < ddSem.length; i++) {
     console.log(ddSel);
     ddSel.addEventListener('click', () => {
         document.getElementById('sem').textContent = `Semester ${i + 1}`;
-
+        window.location.href = 'output.html'
         init(2 * i + 2);
     });
 

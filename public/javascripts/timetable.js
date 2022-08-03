@@ -42,7 +42,7 @@ function later(days, timetable) {
     console.log({days, timetable});
     for (let i = 0; i < days.length; i++) {
         for (let j = 0; j < days[i].length; j++) {
-            if (timetable[i][j].startsWith('NW')) {
+            if (timetable[i][j].startsWith('NW') || timetable[i][j].startsWith('MIN')) {
                 timetable[i][j] = 'NW/MP';
             }
             days[i][j].textContent = timetable[i][j];
@@ -54,7 +54,7 @@ function generateNew() {
     console.log('Clicked');
     fetch('http://localhost:8000/create', OPTIONS)
         .then(() => {
-            init();
+            init(6);
         });
 }
 
@@ -90,16 +90,6 @@ for (let i = 0; i < ddSem.length; i++) {
 
         init(i + 1);
     });
-
 }
-const ddDeptVal = ["CSE","ME","CE","ECE","EE"];
-const ddDept = ["D1","D2","D3","D4","D5"];
 
-for ( let i = 0 ; i < 5 ; i++)
-{
-    let deptSel = document.getElementById(`${ddDept[i]}`);
-    deptSel.addEventListener('click', () =>{
-        document.getElementById('dept').textContent = `${ddDeptVal[i]}`;
-    });
-}
 init(6);
