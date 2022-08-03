@@ -48,11 +48,20 @@ for (let i = 0; i < ddSem.length; i++) {
         if( ddSel.id == "S2"){
                 location.href = 'ipsem2.html';
         }
+        else if( ddSel.id == "S3"){
+          location.href = 'ipsem3.html'
+        }
         else if( ddSel.id == "S4"){
           location.href = 'ipsem4.html'
         }
+        else if( ddSel.id == "S5"){
+          location.href = 'ipsem5.html'
+        }
         else if( ddSel.id == "S6"){
           location.href = 'ipsem6.html'
+        }
+        else if( ddSel.id == "S7"){
+          location.href = 'ipsem7.html'
         }
         else if( ddSel.id == "S8"){
           location.href = 'ipsem8.html'
