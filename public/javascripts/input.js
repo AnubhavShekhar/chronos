@@ -2,6 +2,15 @@ const ddTypeVal = ["Odd","Even"];
 const ddType = ["I1","I2"];
 const ddSem = ["S1","S2","S3","S4","S5","S6","S7","S8"];
 
+const OPTIONS =     {
+  method: 'GET',
+  mode: 'cors',
+  headers: {
+      'Access-Control-Allow-Origin': '*',
+  },
+};
+
+
 for (let i = 0; i < 2 ;i++) {
   const typeSel = document.getElementById(`${ddType[i]}`);
   typeSel.addEventListener('click', () => {
@@ -10,6 +19,7 @@ for (let i = 0; i < 2 ;i++) {
 
     // Display only semester based on odd/even selection
     if (typeSel.innerText.endsWith('n')) {
+      document.getElementById('sem').textContent = `Semester`;
         for (let j = 0; j < ddSem.length; j++) {
             if (j % 2 == 1) {
                 document.getElementById(ddSem[j]).style.display = 'flex';
@@ -18,6 +28,7 @@ for (let i = 0; i < 2 ;i++) {
             }
         }
     } else {
+        document.getElementById('sem').textContent = `Semester`;
         for (let j = 0; j < ddSem.length; j++) {
             if (j % 2 == 0) {
                 document.getElementById(ddSem[j]).style.display = 'flex';
@@ -34,8 +45,16 @@ for (let i = 0; i < ddSem.length; i++) {
     ddSel.style.display = 'none';
     ddSel.addEventListener('click', () => {
         document.getElementById('sem').textContent = `Semester ${i + 1}`;
+        fetchSem(i + 1);
     });
 }
+
+async function fetchSem(sem) {
+  fetch(`http://localhost:8000/classes/${sem}`, OPTIONS)
+    .then(response => response.json())
+    .then(data => console.log(data));
+}
+
 // const ddDeptVal = ["CSE","ME","CE","ECE","EE"];
 // const ddDept = ["D1","D2","D3","D4","D5"];
 
@@ -317,3 +336,4 @@ $("select").on("click" , function() {
     label.find(".label-desc").html(selection);
       
   });
+  
