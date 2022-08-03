@@ -156,7 +156,7 @@
     width:25%;
 }
 
-.container-teacher-1,.container-teacher-2,.container-teacher-3,.container-teacher-4,.container-teacher-5 {
+.container-teacher-1,.container-teacher-2,.container-teacher-3,.container-teacher-4,.container-teacher-5,.container-teacher-6,.container-teacher-7 {
   cursor: pointer;
   position : relative;
   max-width:  20em;
@@ -183,7 +183,7 @@
   border: 0 none;
 }
 
-.container-teacher-1,.container-teacher-2,.container-teacher-3,.container-teacher-4,.container-teacher-5 {
+.container-teacher-1,.container-teacher-2,.container-teacher-3,.container-teacher-4,.container-teacher-5,.container-teacher-6,.container-teacher-7{
   background: #ececec;
 }
 
@@ -205,7 +205,7 @@
   border-left: 5px solid #fff;
 }
 
-.container-subject-1,.container-subject-2,.container-subject-3,.container-subject-4,.container-subject-5{
+.container-subject-1,.container-subject-2,.container-subject-3,.container-subject-4,.container-subject-5,.container-subject-6,.container-subject-7{
   cursor: pointer;
   position : relative;
   max-width:  20em;
@@ -213,7 +213,7 @@
   width: 100%;
 }
 
-.container-subject-1,.container-subject-2,.container-subject-3,.container-subject-4,.container-subject-5 {
+.container-subject-1,.container-subject-2,.container-subject-3,.container-subject-4,.container-subject-5,.container-subject-6,.container-subject-7{
     background: #ececec;
 }
 
