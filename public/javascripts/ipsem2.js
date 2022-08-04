@@ -67,6 +67,39 @@ document.getElementById('S6').addEventListener('click', () => location.href = 'i
 document.getElementById('S7').addEventListener('click', () => location.href = 'ipsem7.html');
 document.getElementById('S8').addEventListener('click', () => location.href = 'ipsem8.html');
 
+const POST_OPTIONS = {
+  method: 'POST',
+  mode: 'no-cors',
+  headers: {
+      'Access-Control-Allow-Origin': '*',
+  },
+};
+
+
+const submitBtn = document.getElementById('sbmit');
+submitBtn.addEventListener('click', () => {
+  let formData = {};
+  for (let i = 1; i <= 8; i++) {
+    const teacher = document.getElementById(`container-teacher-${i}`);
+    const tvalue = teacher.options[teacher.selectedIndex].value;
+    const subject = document.getElementById(`container-subject-${i}`);
+    const svalue = subject.options[subject.selectedIndex].value;
+    console.log({tvalue, svalue})
+
+    formData[tvalue] = svalue;
+    POST_OPTIONS.body = JSON.stringify(formData);
+  }
+  // return;
+  console.log(formData);
+  
+  fetch('http://localhost:8000/remap', POST_OPTIONS)
+    .then(() => fetch('http://localhost:8000/create', OPTIONS));
+});
+
+const generateBtn = document.getElementById('gnrate');
+generateBtn.addEventListener('click', () => {
+  fetch('http://localhost:8000/create', OPTIONS);
+})
 
 // const ddDeptVal = ["CSE","ME","CE","ECE","EE"];
 // const ddDept = ["D1","D2","D3","D4","D5"];
