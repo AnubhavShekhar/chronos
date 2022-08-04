@@ -10,6 +10,10 @@ const OPTIONS =     {
 
 // document.getElementById('sem').textContent = `Semester 6`;
 
+if (window.localStorage.getItem('sem') == null) {
+    window.localStorage.setItem('sem', 6);
+}
+
 let timetable;
 let ttIndex = 0;
 
@@ -26,6 +30,10 @@ if (semType.endsWith('n')) {
 }
 
 function init(id) {
+    window.localStorage.setItem('sem', id);
+    document.getElementById('sem').textContent = `Semester ${id}`;
+    const exportLink = document.getElementById('exprt');
+    exportLink.setAttribute('href', `http://localhost:8000/xl/${id}`);
     fetch(`http://localhost:8000/timetables/${id}`, OPTIONS)
         .then(response => response.json())
         .then(data => later(allDays, data));
@@ -82,6 +90,7 @@ for (let i = 0; i < ddSem.length; i++) {
     console.log(ddSel);
     if(ddSel.id == "S1" || ddSel.id == "S2"){
         ddSel.onclick = function (){
+            window.localStorage.setItem('sem', 2);
             location.href = 'special.html'
         }
     }
@@ -92,4 +101,5 @@ for (let i = 0; i < ddSem.length; i++) {
     });
 }
 
-init(6);
+const SEM = Number(window.localStorage.getItem('sem'));
+init(SEM);

@@ -1,8 +1,9 @@
-const ddTypeVal = ["Odd","Even"];
-const ddType = ["I1","I2"];
-const ddSem = ["S1","S2","S3","S4","S5","S6","S7","S8"];
+const ddTypeVal = ["Odd", "Even"];
+const ddType = ["I1", "I2"];
+const ODD = ["S3", "S5", "S7"];
+const EVEN = ["S2", "S4", "S6", "S8"];
 
-const OPTIONS =     {
+const OPTIONS = {
   method: 'GET',
   mode: 'cors',
   headers: {
@@ -10,72 +11,41 @@ const OPTIONS =     {
   },
 };
 
-
-for (let i = 0; i < 2 ;i++) {
+for (let i = 0; i < ddTypeVal.length; i++) {
   const typeSel = document.getElementById(`${ddType[i]}`);
   typeSel.addEventListener('click', () => {
     document.getElementById('type').textContent = `${ddTypeVal[i]}`;
     window.localStorage.setItem('type', ddTypeVal[i].toLowerCase());
-
     // Display only semester based on odd/even selection
-    if (typeSel.innerText.endsWith('n')) {
-      document.getElementById('sem').textContent = `Semester`;
-        for (let j = 0; j < ddSem.length; j++) {
-            if (j % 2 == 1) {
-                document.getElementById(ddSem[j]).style.display = 'flex';
-            } else {
-                document.getElementById(ddSem[j]).style.display = 'none';
-            }
-        }
+    if (window.localStorage.getItem('type').endsWith('n')) {
+      console.log('even choosen');
+      // document.getElementById('sem').textContent = `Semester`;
+      for (let j = 0; j < ODD.length; j++) {
+        console.log(document.getElementById(ODD[j]));
+        document.getElementById(ODD[j]).style.display = 'none'
+      }
+
+      for (let j = 0; j < EVEN.length; j++) {
+        document.getElementById(EVEN[j]).style.display = 'flex';
+      }
     } else {
-        document.getElementById('sem').textContent = `Semester`;
-        for (let j = 0; j < ddSem.length; j++) {
-            if (j % 2 == 0) {
-                document.getElementById(ddSem[j]).style.display = 'flex';
-            } else {
-                document.getElementById(ddSem[j]).style.display = 'none';
-            }
-        }
+      for (let j = 0; j < EVEN.length; j++) {
+        document.getElementById(EVEN[j]).style.display = 'none';
+      }
+      for (let j = 0; j < ODD.length; j++) {
+        document.getElementById(ODD[j]).style.display = 'flex';
+      }      
     }
   });
 }
 
-for (let i = 0; i < ddSem.length; i++) {
-    const ddSel = document.getElementById(`${ddSem[i]}`);
-    ddSel.style.display = 'none';
-    ddSel.addEventListener('click', () => {
-        document.getElementById('sem').textContent = `Semester ${i + 1}`;
-        if( ddSel.id == "S2"){
-                location.href = 'ipsem2.html';
-        }
-        else if( ddSel.id == "S3"){
-          location.href = 'ipsem3.html'
-        }
-        else if( ddSel.id == "S4"){
-          location.href = 'ipsem4.html'
-        }
-        else if( ddSel.id == "S5"){
-          location.href = 'ipsem5.html'
-        }
-        else if( ddSel.id == "S6"){
-          location.href = 'ipsem6.html'
-        }
-        else if( ddSel.id == "S7"){
-          location.href = 'ipsem7.html'
-        }
-        else if( ddSel.id == "S8"){
-          location.href = 'ipsem8.html'
-        }
-
-        fetchSem(i + 1);
-    });
-}
-
-async function fetchSem(sem) {
-  fetch(`http://localhost:8000/classes/${sem}`, OPTIONS)
-    .then(response => response.json())
-    .then(data => console.log(data));
-}
+document.getElementById('S2').addEventListener('click', () => location.href = 'ipsem2.html');
+document.getElementById('S3').addEventListener('click', () => location.href = 'ipsem3.html');
+document.getElementById('S4').addEventListener('click', () => location.href = 'ipsem4.html');
+document.getElementById('S5').addEventListener('click', () => location.href = 'ipsem5.html');
+document.getElementById('S6').addEventListener('click', () => location.href = 'ipsem6.html');
+document.getElementById('S7').addEventListener('click', () => location.href = 'ipsem7.html');
+document.getElementById('S8').addEventListener('click', () => location.href = 'ipsem8.html');
 
 // const ddDeptVal = ["CSE","ME","CE","ECE","EE"];
 // const ddDept = ["D1","D2","D3","D4","D5"];

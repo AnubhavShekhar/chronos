@@ -22,11 +22,13 @@ if (semType.endsWith('n')) {
     }
 }
 
-
 let timetable;
 let ttIndex = 0;
 
 function init(id) {
+    document.getElementById('sem').textContent = `Semester ${id}`;
+    const exportLink = document.getElementById('exprt');
+    exportLink.setAttribute('href', 'http://localhost:8000/xl/2');
     fetch(`http://localhost:8000/timetables/${id}`, OPTIONS)
         .then(response => response.json())
         .then(data => later(allDays, data));
@@ -55,7 +57,7 @@ function generateNew() {
     console.log('Clicked');
     fetch('http://localhost:8000/create', OPTIONS)
         .then(() => {
-            init();
+            init(2);
         });
 }
 
@@ -70,7 +72,7 @@ addSlot(monday, 'mon', 7);
 addSlot(tuesday, 'tue', 7);
 addSlot(wednesday, 'wed', 7);
 addSlot(thursday, 'thu', 7);
-addSlot(friday, 'fri', 6);
+addSlot(friday, 'fri', 5);
 
 const rfBtn = document.querySelector('#refresh');
 rfBtn.addEventListener('click', generateNew);
@@ -83,19 +85,9 @@ for (let i = 0; i < ddSem.length; i++) {
     console.log(ddSel);
     ddSel.addEventListener('click', () => {
         document.getElementById('sem').textContent = `Semester ${i + 1}`;
-        window.location.href = 'output.html'
-        init(2 * i + 2);
-    });
-
-}
-const ddDeptVal = ["CSE","ME","CE","ECE","EE"];
-const ddDept = ["D1","D2","D3","D4","D5"];
-
-for ( let i = 0 ; i < 5 ; i++)
-{
-    let deptSel = document.getElementById(`${ddDept[i]}`);
-    deptSel.addEventListener('click', () =>{
-        document.getElementById('dept').textContent = `${ddDeptVal[i]}`;
+        window.localStorage.setItem('sem', i + 1);
+        window.location.href = 'output.html';
     });
 }
-init(6);
+
+init(2);
