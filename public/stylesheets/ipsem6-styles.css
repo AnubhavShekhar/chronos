@@ -21,7 +21,7 @@
 .dropdowns{
     font-family: Montserrat;
     z-index: 100;
-    margin-top: 100px;
+    margin-top: 50px;
     cursor:default;
 }
 .dropdown{
@@ -134,7 +134,7 @@
     
 }
 .inputs{
-    margin-top: 150px;
+    margin-top: 80px;
     display: flex;
     justify-content: space-around;
     z-index: -1;
@@ -160,7 +160,7 @@
   cursor: pointer;
   position : relative;
   max-width:  20em;
-  margin: 1em auto;
+  margin: 0.8em auto;
   width: 100%;
 }
 
@@ -218,7 +218,7 @@
 }
 
 .buttons{
-    margin-top: 50px;
+    margin-top: 10px;
     display: flex;
     justify-content: space-around;
 }
